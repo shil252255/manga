@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link type="text/css" href="{% static 'catalog/css/styles.css' %}?v=1" rel="stylesheet"/>
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <title>{{title}}</title>
+</head>
+<body>
+    <div class="header">
+        <li class="logo"><a href="{% url 'home' %}"><div class="logo"></div></a></li>
+        <div class="search" >
+            <form action="" method="get">
+              <input name="search" placeholder="Искать ..." type="search">
+              <button type="submit"></button>
+            </form>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+
+</body>
+
+</html>

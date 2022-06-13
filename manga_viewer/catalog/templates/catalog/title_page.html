@@ -1,0 +1,26 @@
+{% extends 'catalog/base.html' %}
+
+{% block content %}
+<div class="title_page">
+    <div class="description">
+        <h1>{{title.title}}</h1>
+        <img class="poster_on_title_page" src="{{title.poster.url}}">
+        <p>{{title.description}}</p>
+    </div>
+    <div class="chapters">
+        {% for chapter in chapters %}
+        {% if chapter.poster %}
+        <a href="{{chapter.get_absolute_url}}">
+        <div class="small-poster">
+            <img  src="{{chapter.poster.url}}">
+            <div class="title">
+                <p>{{chapter.number}} {{chapter.name}}</p>
+            </div>
+        </div>
+        </a>
+        {%endif%}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends 'catalog/base.html' %}
+
+
+
+    {% block content %}
+    <div class="catalog">
+        {% for book in titles %}
+        {% if book.poster %}
+        <a href="{{book.get_absolute_url}}">
+        <div class="small-poster">
+            <img  src="{{book.poster.url}}">
+            <div class="title">
+                <p>{{book.title|truncatewords:4}}</p>
+            </div>
+        </div>
+        </a>
+        {%endif%}
+        {% endfor %}
+    </div>
+    {% endblock content %}

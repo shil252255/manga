@@ -1,0 +1,16 @@
+{% extends 'catalog/base.html' %}
+
+{% block content %}
+<div class="title_page">
+    <div class="chapters">
+        {% for page in pages %}
+        <div class="small-poster">
+            <a href="{{page.url}}">
+            <img  src="{{page.url}}">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
