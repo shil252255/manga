@@ -75,8 +75,7 @@ button:before{
   width: 15%;
   margin: 20px;
   border-radius: 10px;
-      vertical-align: top;
-
+  vertical-align: top;
 }
 
 .small-poster img{
@@ -111,4 +110,9 @@ button:before{
 .logo div{
     display:inline;
 
+}
+a {
+  color: #ffffff;
+  border-bottom: none;
+  text-decoration: none;
 }
