@@ -19,7 +19,7 @@ class MangaTitles(models.Model):
         return reverse('title_page', kwargs={'title_slug': self.slug})
 
 
-class Chapter(models.Model):
+class Chapters(models.Model):
     origin_id = models.IntegerField(unique=True)
     title = models.ForeignKey(MangaTitles, on_delete=models.CASCADE)
     number = models.FloatField()
@@ -40,7 +40,7 @@ class Chapter(models.Model):
 
 
 class Pages(models.Model):
-    chapter = models.ForeignKey(Chapter, on_delete=models.CASCADE)
+    chapter = models.ForeignKey(Chapters, on_delete=models.CASCADE)
     url = models.URLField(unique=True)
     number = models.IntegerField(default=0)
     size = models.IntegerField()
@@ -61,7 +61,7 @@ class OtherTitles(models.Model):
 
 
 class Covers(models.Model):
-    chapter = models.ForeignKey(Chapter, on_delete=models.CASCADE)
+    chapter = models.ForeignKey(Chapters, on_delete=models.CASCADE)
     page = models.ForeignKey(Pages, on_delete=models.CASCADE)
     miniature = models.FileField(upload_to='covers/', null=True, blank=True)
     
