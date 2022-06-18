@@ -4,18 +4,19 @@ from catalog.models import *
 
 
 def index(request):
-    return render(request, 'catalog/catalog.html', {'title': 'Каталог', 'titles': Titles.objects.all()})
+    context = {'title': 'Каталог', 'manga_titles': MangaTitles.objects.all()}
+    return render(request, 'catalog/catalog.html', context)
 
 
-def title_page(request, title_slug):
-    title = Titles.objects.get(slug=title_slug)
-    chapters = Books.objects.filter(title_id=title.id)
-    return render(request, 'catalog/title_page.html', {'title': title, 'chapters': chapters})
+def manga_title_view(request, manga_title_slug):
+    manga_title = MangaTitles.objects.get(slug=manga_title_slug)
+    chapters = Chapters.objects.filter(title_id=manga_title.id).order_by('-number')
+    context = {'title': manga_title.title, 'manga_title': manga_title, 'chapters': chapters}
+    return render(request, 'catalog/manga_title.html', context)
 
 
-def page_viewer(request, title_slug, book_slug):
-    title = Titles.objects.get(slug=title_slug)
-    chapter = Books.objects.get(slug=book_slug, title__slug=title_slug)
-    pages = Pages.objects.filter(book_id=chapter.id)
-    return render(request, 'catalog/page_viewer.html', {'title': chapter.name, 'pages': pages})
+def chapter_view(request, manga_title_slug, chapter_slug):
+    chapter = Chapters.objects.get(slug=chapter_slug, title__slug=manga_title_slug)
+    pages = Pages.objects.filter(chapter=chapter.id).order_by('url')
+    return render(request, 'catalog/chapter.html', {'title': chapter.name, 'pages': pages})
 

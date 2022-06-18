@@ -101,6 +101,7 @@ button:before{
     text-align: left;
     vertical-align: top;
 }
+
 .logo a:before{
   content: "\f518";
   font-family: FontAwesome;

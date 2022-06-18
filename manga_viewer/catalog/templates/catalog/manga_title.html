@@ -3,9 +3,9 @@
 {% block content %}
 <div class="title_page">
     <div class="description">
-        <h1>{{title.title}}</h1>
-        <img class="poster_on_title_page" src="{{title.poster.url}}">
-        <p>{{title.description}}</p>
+        <h1>{{manga_title.title}}</h1>
+        <img class="poster_on_title_page" src="{{manga_title.poster.url}}">
+        <p>{{manga_title.description}}</p>
     </div>
     <div class="chapters">
         {% for chapter in chapters %}
@@ -14,7 +14,7 @@
         <div class="small-poster">
             <img  src="{{chapter.poster.url}}">
             <div class="title">
-                <p>{{chapter.number}} {{chapter.name}}</p>
+                <p>{{chapter.get_number}} - {{chapter.name}}</p>
             </div>
         </div>
         </a>

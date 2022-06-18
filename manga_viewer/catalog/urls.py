@@ -3,6 +3,6 @@ from .views import *
 
 urlpatterns = [
     path('', index, name='home'),
-    path('<slug:title_slug>', title_page, name='title_page'),
-    path('<slug:title_slug>/<slug:book_slug>', page_viewer, name='book_page')
+    path('<slug:manga_title_slug>', manga_title_view, name='manga_title_url'),
+    path('<slug:manga_title_slug>/<slug:chapter_slug>', chapter_view, name='chapter_url')
 ]

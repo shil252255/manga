@@ -16,7 +16,7 @@ class MangaTitles(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('title_page', kwargs={'title_slug': self.slug})
+        return reverse('manga_title_url', kwargs={'manga_title_slug': self.slug})
 
 
 class Chapters(models.Model):
@@ -30,7 +30,7 @@ class Chapters(models.Model):
     slug = models.SlugField()
 
     def get_absolute_url(self):
-        return reverse('book_page', kwargs={'book_slug': self.slug, 'title_slug': self.title.slug})
+        return reverse('chapter_url', kwargs={'chapter_slug': self.slug, 'manga_title_slug': self.title.slug})
 
     def get_number(self):
         return str(int(self.number)) if self.number == int(self.number) else str(self.number)

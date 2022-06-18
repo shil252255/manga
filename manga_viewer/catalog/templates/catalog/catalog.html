@@ -1,16 +1,13 @@
 {% extends 'catalog/base.html' %}
-
-
-
     {% block content %}
     <div class="catalog">
-        {% for book in titles %}
-        {% if book.poster %}
-        <a href="{{book.get_absolute_url}}">
+        {% for manga_title in manga_titles %}
+        {% if manga_title.poster %}
+        <a href="{{manga_title.get_absolute_url}}">
         <div class="small-poster">
-            <img  src="{{book.poster.url}}">
+            <img  src="{{manga_title.poster.url}}">
             <div class="title">
-                <p>{{book.title|truncatewords:4}}</p>
+                <p>{{manga_title.title|truncatewords:4}}</p>
             </div>
         </div>
         </a>
