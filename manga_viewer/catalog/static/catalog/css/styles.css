@@ -6,59 +6,54 @@ body {
 	padding: 0;
 	margin: 0;
 }
+
 .header {
-        background-color: #090909;
-        padding: 10px, 0px;
-        width: 100%;
-	    height: 100%;
-	    vertical-align: top;
-	    height: 50px;
-	    margin-bottom: 40px;
-
+    background-color: #090909;
+    padding: 10px;
+    width: 100%;
+    vertical-align: top;
+    height: 50px;
+    margin-bottom: 40px;
 }
+
 div.search {
-  vertical-align: middle;
-  white-space: nowrap;
-  position: relative;
-  width: 300px;
-  margin-left: auto;
-  margin-right: auto;
-
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-
 
 .search input {
-  color: #ffffff;
-  width: 250px;
-  height: 36px;
-  padding-left: 12px;
-  border-radius: 36px;
-  border: 1px solid #f0f0f0;
-  background: #15151500;
-  outline: none;
-  height: 36px;
-  transition: .3s linear;
-  margin-left: auto;
-  margin-right: auto;
-
+    color: #ffffff;
+    width: 250px;
+    height: 36px;
+    padding-left: 12px;
+    border-radius: 36px;
+    border: 1px solid #f0f0f0;
+    background: #15151500;
+    outline: none;
+    transition: .3s linear;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 input:focus {
-  width: 300px;
+    width: 300px;
 }
 
 button {
-  width: 42px;
-  height: 42px;
-  background: none;
-  border: none;
-
+    width: 42px;
+    height: 42px;
+    background: none;
+    border: none;
 }
+
 button:before{
-  content: "\f002";
-  font-family: FontAwesome;
-  color: #ffffff;
+    content: "\f002";
+    font-family: FontAwesome, serif;
+    color: #ffffff;
 }
 
 .catalog {
@@ -70,12 +65,12 @@ button:before{
 }
 
 .small-poster{
-  min-width: 100px;
-  display: inline-block;
-  width: 15%;
-  margin: 20px;
-  border-radius: 10px;
-  vertical-align: top;
+    min-width: 100px;
+    display: inline-block;
+    width: 15%;
+    margin: 20px;
+    border-radius: 10px;
+    vertical-align: top;
 }
 
 .small-poster img{
@@ -94,6 +89,7 @@ button:before{
 	float: left;
     margin-right: 20px;
 }
+
 .title_page {
     max-width: 1200px;
     margin-left: auto;
@@ -103,17 +99,18 @@ button:before{
 }
 
 .logo a:before{
-  content: "\f518";
-  font-family: FontAwesome;
-  color: #ffffff;
-  font-size: 40px;
+    content: "\f518";
+    font-family: FontAwesome, serif;
+    color: #ffffff;
+    font-size: 40px;
 }
+
 .logo div{
     display:inline;
-
 }
+
 a {
-  color: #ffffff;
-  border-bottom: none;
-  text-decoration: none;
+    color: #ffffff;
+    border-bottom: none;
+    text-decoration: none;
 }
